@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: 3d2dfeed4c204ac44b4614c3ab830bb3
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spr_prince_run_r2l_0
+    21300002: spr_prince_run_r2l_1
+    21300004: spr_prince_run_r2l_2
+    21300006: spr_prince_run_r2l_3
+    21300008: spr_prince_run_r2l_4
+    21300010: spr_prince_run_r2l_5
+    21300012: spr_prince_run_r2l_6
+    21300014: spr_prince_run_r2l_7
+    21300016: spr_prince_run_r2l_8
+    21300018: spr_prince_run_r2l_9
+    21300020: spr_prince_run_r2l_10
+    21300022: spr_prince_run_r2l_11
+    21300024: spr_prince_run_r2l_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: spr_prince_run_r2l_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 31
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 2
+        width: 41
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 3
+        width: 50
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 3
+        width: 50
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2
+        width: 50
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_6
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2
+        width: 61
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_7
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 2
+        width: 64
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_8
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 2
+        width: 47
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_9
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 3
+        width: 52
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_10
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1
+        width: 62
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_11
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 3
+        width: 59
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_prince_run_r2l_12
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 2
+        width: 44
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
