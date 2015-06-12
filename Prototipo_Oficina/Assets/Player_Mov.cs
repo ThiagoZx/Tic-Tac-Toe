@@ -19,10 +19,13 @@ public class Player_Mov : MonoBehaviour {
 		if (!isMoving) {
 			if (Input.GetMouseButtonDown (0)) {
 				startPosition = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
-				finalPosition = Input.mousePosition;
+                finalPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 				isMoving = true;
 			}
 		} else if (isMoving) {
+            if (Input.GetMouseButtonDown(0)) {
+                finalPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            }
 			gameObject.transform.position = Vector2.MoveTowards (startPosition, finalPosition, Time.deltaTime * speed);
 			startPosition = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
 			isMoving = startPosition == finalPosition? isMoving = false : isMoving = true;
