@@ -6,11 +6,11 @@ public class DoorBehaviour : MonoBehaviour {
 	public Texture2D cursor;
 	public GameObject player;
 	public GUITexture Fader;
+	public string Destination;
 
 	void OnMouseOver(){
 		Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
 		if (Input.GetMouseButtonDown (0)) {
-			//Application.LoadLevel(gameObject.name);
 			StartCoroutine(ChangeScene());
 		}
 	}
@@ -18,7 +18,7 @@ public class DoorBehaviour : MonoBehaviour {
 	IEnumerator ChangeScene(){
 		Instantiate (Fader);
 		yield return new WaitForSeconds(.5f);
-		Application.LoadLevel(gameObject.name);
+		Application.LoadLevel(Destination);
 	}
 	
 	void OnMouseExit(){
