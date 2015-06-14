@@ -1,11 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DoorBehaviour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player_Mov.cs">
     <Files>
-      <File FileName="Prototipo_Oficina.sln" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player_Mov.cs" Line="46" Column="28" />
       <File FileName="Assets\Scripts\DoorBehaviour.cs" Line="21" Column="36" />
-      <File FileName="..\..\..\Unity Projects\Tetris3D\Assets\Tile_Mov.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player_Mov.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Fader_Behaviour.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

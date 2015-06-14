@@ -5,12 +5,15 @@ public class Player_Mov : MonoBehaviour {
 		
 	private Vector2 startPosition;
 	private Vector2 finalPosition;
-	private float speed;
+	private float speed = 3;
 	private bool isMoving;
-	
-	// Use this for initialization
-	void Start () {
-		speed = 3;
+
+	void Start(){
+		if(PlayerPrefs.HasKey(Application.loadedLevelName + "x")){
+			float positionX = PlayerPrefs.GetFloat (Application.loadedLevelName + "x");
+			float positionY = PlayerPrefs.GetFloat (Application.loadedLevelName + "y");
+			gameObject.transform.position = new Vector2(positionX, positionY);
+		}
 	}
 
 	void goToMouse(){
@@ -28,9 +31,18 @@ public class Player_Mov : MonoBehaviour {
 			isMoving = startPosition == finalPosition? isMoving = false : isMoving = true;
 		}
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		goToMouse ();
+		SavePosition ();
+	}
+
+	void SavePosition(){
+		PlayerPrefs.SetFloat(Application.loadedLevelName + "x", gameObject.transform.position.x);
+		PlayerPrefs.SetFloat(Application.loadedLevelName + "y", gameObject.transform.position.y);
+	}
+
+	void OnApplicationQuit(){
+		PlayerPrefs.DeleteAll ();
 	}
 }
