@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\DoorBehaviour.cs" />
      <Compile Include="Assets\Scripts\Fader_Behaviour.cs" />
+     <Compile Include="Assets\Scripts\NPCBehaviour.cs" />
      <Compile Include="Assets\Scripts\Player_Mov.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Users/thiago.torres/Desktop/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
