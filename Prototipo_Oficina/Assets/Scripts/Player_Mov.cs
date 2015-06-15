@@ -33,6 +33,7 @@ public class Player_Mov : MonoBehaviour {
 	}
 
 	void Update () {
+		gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 		goToMouse ();
 		SavePosition ();
 	}
