@@ -2,9 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NPCBehaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\NPCBehaviour.cs" Line="26" Column="3" />
-      <File FileName="Assets\Scripts\Player_Mov.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DoorBehaviour.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\Desktop\Tetris3D\Assets\_Scripts\Tile_Mov.cs" Line="36" Column="2" />
+      <File FileName="..\..\..\..\Desktop\Tic-Tac-Toe-master\Prototipo_Oficina\Assets\Scripts\Player_Mov.cs" Line="38" Column="67" />
+      <File FileName="..\..\..\..\Desktop\Tic-Tac-Toe-master\Prototipo_Oficina\Assets\Scripts\DoorBehaviour.cs" Line="24" Column="13" />
+      <File FileName="Assets\Scripts\NPCBehaviour.cs" Line="30" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

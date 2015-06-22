@@ -4,7 +4,7 @@ using System.Collections;
 public class NPCBehaviour : MonoBehaviour {
 
 	public Texture2D cursor;
-	public GameObject textBox;
+	public GUIText[] textBox;
 	public GameObject[] scripts;
 	public string[] text;
   
@@ -17,11 +17,19 @@ public class NPCBehaviour : MonoBehaviour {
 
 	private void chatIn(){
 		for (int i = 0; i < scripts.Length; i++) {
-			if(scripts[i].tag == "Player"){
-				scripts[i].GetComponent<Player_Mov>().enabled = false;
-			} else if(scripts[i].tag == "Door"){
+			if(scripts[i].tag == "Door"){
 				scripts[i].GetComponent<DoorBehaviour>().enabled = false;
+			} else if(scripts[i].tag == "Player"){
+				scripts[i].GetComponent<Player_Mov>().enabled = false;
 			}
+		}
+
+		chat ();
+	}
+
+	private void chat(){
+		for (int i = 0; i < textBox.Length; i++) {
+			textBox[i].text = text[i];
 		}
 	}
 
