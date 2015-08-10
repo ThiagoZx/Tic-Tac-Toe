@@ -7,10 +7,11 @@ public class NPCBehaviour : MonoBehaviour {
 	public GUIText[] textBox;
 	public GameObject[] scripts;
 	public string[] text;
+	private bool isTalking;
   
 	void OnMouseOver(){
 		Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButtonUp (0)) {
 			chatIn();
 		}
 	}
@@ -24,7 +25,9 @@ public class NPCBehaviour : MonoBehaviour {
 			}
 		}
 
+		isTalking = true;
 		chat ();
+
 	}
 
 	private void chat(){
@@ -33,7 +36,16 @@ public class NPCBehaviour : MonoBehaviour {
 		}
 	}
 
+	private void clearChat(){
+		for (int i = 0; i < textBox.Length; i++) {
+			textBox[i].text = null;
+		}
+	}
+
 	private void chatOut(){
+
+		clearChat ();
+
 		for (int i = 0; i < scripts.Length; i++) {
 			if(scripts[i].tag == "Player"){
 				scripts[i].GetComponent<Player_Mov>().enabled = true;
@@ -45,5 +57,12 @@ public class NPCBehaviour : MonoBehaviour {
 	
 	void OnMouseExit(){
 		Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+	}
+
+	void Update(){
+		if(isTalking && Input.GetMouseButton (0)){
+			chatOut();
+			isTalking = false;
+		}
 	}
 }

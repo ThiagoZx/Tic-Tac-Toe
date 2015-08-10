@@ -38,6 +38,10 @@ public class Player_Mov : MonoBehaviour {
 		SavePosition ();
 	}
 
+	void OnDisable(){
+		isMoving = false;
+	}
+
 	void SavePosition(){
 		PlayerPrefs.SetFloat(Application.loadedLevelName + "x", gameObject.transform.position.x);
 		PlayerPrefs.SetFloat(Application.loadedLevelName + "y", gameObject.transform.position.y);
