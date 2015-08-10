@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\DoorBehaviour.cs" />
      <Compile Include="Assets\Scripts\Fader_Behaviour.cs" />
+     <Compile Include="Assets\Scripts\InteractionBehaviour.cs" />
      <Compile Include="Assets\Scripts\NPCBehaviour.cs" />
      <Compile Include="Assets\Scripts\Player_Mov.cs" />
  <Reference Include="UnityEngine.UI">
