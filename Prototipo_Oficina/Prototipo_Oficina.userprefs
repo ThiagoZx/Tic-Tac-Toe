@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DoorBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player_Mov.cs">
     <Files>
-      <File FileName="Assets\Scripts\NPCBehaviour.cs" Line="27" Column="3" />
+      <File FileName="Assets\Scripts\NPCBehaviour.cs" Line="55" Column="4" />
       <File FileName="Assets\Scripts\DoorBehaviour.cs" Line="36" Column="2" />
       <File FileName="Assets\Scripts\Player_Mov.cs" Line="9" Column="17" />
       <File FileName="Assets\Scripts\Fader_Behaviour.cs" Line="52" Column="1" />
+      <File FileName="Assets\Scripts\InteractionBehaviour.cs" Line="6" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
