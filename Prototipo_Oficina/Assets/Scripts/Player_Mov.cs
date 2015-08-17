@@ -6,7 +6,9 @@ public class Player_Mov : MonoBehaviour {
 	private Vector2 startPosition;
 	private Vector2 finalPosition;
 	private float speed = 3;
+	private bool ToDoor;
 	private bool isMoving;
+	public GameObject door;
 
 	void Start(){
 		if(PlayerPrefs.HasKey(Application.loadedLevelName + "x")){
@@ -37,6 +39,8 @@ public class Player_Mov : MonoBehaviour {
 		gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 		goToMouse ();
 		SavePosition ();
+		print (ToDoor);
+		ToDoor = door.GetComponent<DoorBehaviour> ().DoorClick;
 	}
 
 	void OnDisable(){

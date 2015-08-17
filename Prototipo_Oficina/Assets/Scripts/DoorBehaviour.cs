@@ -8,17 +8,27 @@ public class DoorBehaviour : MonoBehaviour {
 	public string Destination;
 	private bool canChangeScene = false;
 	private bool isWorking = false;
+	public bool DoorClick = false;
 
 	void OnMouseOver(){
 		Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
 		isWorking = false;
-		if (Input.GetMouseButtonDown (0))
+		if (Input.GetMouseButtonDown (0)) {
 			canChangeScene = true;
+			DoorClick = true;
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D col){
-		if(col.gameObject.tag == "Player" && canChangeScene)
-			StartCoroutine(ChangeScene());
+		if (col.gameObject.tag == "Player" && canChangeScene) {
+			StartCoroutine (ChangeScene ());
+			DoorClick = false;
+			print(col.tag + " Is here");
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col){
+		print (col.tag + " Is here");
 	}
 
 	IEnumerator ChangeScene(){
