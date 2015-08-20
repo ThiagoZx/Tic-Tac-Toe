@@ -23,12 +23,7 @@ public class DoorBehaviour : MonoBehaviour {
 		if (col.gameObject.tag == "Player" && canChangeScene) {
 			StartCoroutine (ChangeScene ());
 			DoorClick = false;
-			print(col.tag + " Is here");
 		}
-	}
-
-	void OnTriggerEnter2D(Collider2D col){
-		print (col.tag + " Is here");
 	}
 
 	IEnumerator ChangeScene(){

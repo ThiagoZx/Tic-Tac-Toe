@@ -2,31 +2,31 @@
 using System.Collections;
 
 public class Player_Mov : MonoBehaviour {
-		
+	
 	private Vector2 startPosition;
 	private Vector2 finalPosition;
 	private float speed = 3;
-	private bool ToDoor;
 	private bool isMoving;
-	public GameObject door;
-
+	private bool okMove;
+	
+	
 	void Start(){
+		gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 		if(PlayerPrefs.HasKey(Application.loadedLevelName + "x")){
 			float positionX = PlayerPrefs.GetFloat (Application.loadedLevelName + "x");
 			float positionY = PlayerPrefs.GetFloat (Application.loadedLevelName + "y");
 			gameObject.transform.position = new Vector2(positionX, positionY);
 		}
 	}
-
-	void goToMouse(){
+	
+	void playerMov(){
 		if (Input.GetMouseButtonDown (0)) {
 			if (!isMoving) {
 				startPosition = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
 				isMoving = true;
 			}
 
-			finalPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			finalPosition = new Vector2(finalPosition.x, finalPosition.y + renderer.bounds.size.y / 2);
+			finalPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y + renderer.bounds.size.y / 2);
 			
 		} else if (isMoving) {
 			gameObject.transform.position = Vector2.MoveTowards (startPosition, finalPosition, Time.deltaTime * speed);
@@ -34,24 +34,21 @@ public class Player_Mov : MonoBehaviour {
 			isMoving = startPosition == finalPosition? isMoving = false : isMoving = true;
 		}
 	}
-
+	
 	void Update () {
-		gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-		goToMouse ();
+		playerMov ();
 		SavePosition ();
-		print (ToDoor);
-		ToDoor = door.GetComponent<DoorBehaviour> ().DoorClick;
 	}
-
+	
 	void OnDisable(){
 		isMoving = false;
 	}
-
+	
 	void SavePosition(){
 		PlayerPrefs.SetFloat(Application.loadedLevelName + "x", gameObject.transform.position.x);
 		PlayerPrefs.SetFloat(Application.loadedLevelName + "y", gameObject.transform.position.y);
 	}
-
+	
 	void OnApplicationQuit(){
 		PlayerPrefs.DeleteAll ();
 	}
