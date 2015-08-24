@@ -26,7 +26,8 @@ public class Player_Mov : MonoBehaviour {
 				isMoving = true;
 			}
 
-			finalPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y + renderer.bounds.size.y / 2);
+			finalPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			finalPosition = new Vector2(finalPosition.x, finalPosition.y + renderer.bounds.size.y / 2);
 			
 		} else if (isMoving) {
 			gameObject.transform.position = Vector2.MoveTowards (startPosition, finalPosition, Time.deltaTime * speed);
