@@ -6,19 +6,29 @@ public class InventoryBehaviour : MonoBehaviour {
 	private string InventoryStatus;
 	private float velocity = 0.05f;
 	private float acceleration = 0.01f;
+	private bool above = false;
+	private bool inBound = false;
 
 	void OnMouseEnter(){
 		InventoryStatus = "Working";
 		velocity = 0.05f;
 		acceleration = 0.01f;
+		above = true;
 		StartCoroutine (MovementGO ());
 	}
 
 	void OnMouseExit(){
-		InventoryStatus = "NotWorking";
 		velocity = 0.05f;
 		acceleration = 0.01f;
-		StartCoroutine(MovementBACK ());
+		above = false;
+
+		if (inBound) {
+			InventoryStatus = "WaitToWork";
+			StartCoroutine (WaitToMove ());
+		} else {
+			InventoryStatus = "NotWorking";
+			StartCoroutine (MovementBACK ());
+		}
 	}
 
 	IEnumerator MovementGO(){
@@ -28,6 +38,7 @@ public class InventoryBehaviour : MonoBehaviour {
 				transform.position = new Vector2 (transform.position.x, transform.position.y - velocity);
 			} else {
 				transform.position = new Vector2 (transform.position.x, 4.4f);
+				inBound = true;
 			}
 
 			if(transform.position.y >= 5.1f && transform.position.y <= 5.2f){
@@ -47,6 +58,7 @@ public class InventoryBehaviour : MonoBehaviour {
 			if (transform.position.y < 5.9f) {
 				velocity = velocity + acceleration;
 				transform.position = new Vector2 (transform.position.x , transform.position.y + velocity);
+				inBound = false;
 			} else {
 				transform.position = new Vector2 (transform.position.x, 5.9f);
 			}
@@ -60,6 +72,17 @@ public class InventoryBehaviour : MonoBehaviour {
 			if (transform.position.x != 5.9f) {
 				StartCoroutine (MovementBACK ());
 			}
+		}
+	}
+
+	IEnumerator WaitToMove(){
+		yield return new WaitForSeconds (1f);
+		if (above) {
+			InventoryStatus = "Working";
+			StartCoroutine (MovementGO ());
+		} else {
+			InventoryStatus = "NotWorking";
+			StartCoroutine (MovementBACK ());
 		}
 	}
 }
