@@ -29,6 +29,13 @@ public class Player_Mov : MonoBehaviour {
 			finalPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			finalPosition = new Vector2(finalPosition.x, finalPosition.y + renderer.bounds.size.y / 2);
 			
+			Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			RaycastHit2D hit = Physics2D.Raycast(ray, Vector2.up, 0.1f);
+
+			if ((hit.collider != null) && (hit.transform.tag == "Door")){
+				finalPosition = new Vector2(hit.transform.gameObject.transform.position.x, hit.transform.position.y); //+ hit.transform.gameObject.renderer.bounds.size.y);
+			} 
+			
 		} else if (isMoving) {
 			gameObject.transform.position = Vector2.MoveTowards (startPosition, finalPosition, Time.deltaTime * speed);
 			startPosition = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);

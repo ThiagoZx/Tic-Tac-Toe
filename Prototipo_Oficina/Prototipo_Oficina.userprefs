@@ -1,6 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player_Mov.cs">
+    <Files>
+      <File FileName="Assets\Scripts\DoorBehaviour.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\Fader_Behaviour.cs" Line="52" Column="1" />
+      <File FileName="Assets\Scripts\InteractionBehaviour.cs" Line="20" Column="1" />
+      <File FileName="Assets\Scripts\InventoryBehaviour.cs" Line="88" Column="2" />
+      <File FileName="Assets\Scripts\NPCBehaviour.cs" Line="68" Column="2" />
+      <File FileName="Assets\Scripts\Player_Mov.cs" Line="52" Column="20" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="14" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
