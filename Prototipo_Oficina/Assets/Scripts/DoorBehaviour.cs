@@ -38,6 +38,8 @@ public class DoorBehaviour : MonoBehaviour {
 		Instantiate (Fader);
 		yield return new WaitForSeconds(.5f);
 		Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+		PlayerPrefs.SetFloat(Application.loadedLevelName + "x", gameObject.transform.position.x);
+		PlayerPrefs.SetFloat(Application.loadedLevelName + "y", gameObject.transform.position.y);
 		Application.LoadLevel(Destination);
 	}
 
