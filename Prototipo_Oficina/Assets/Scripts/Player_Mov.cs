@@ -7,7 +7,7 @@ public class Player_Mov : MonoBehaviour {
 	private Vector2 finalPosition;
 	private float speed = 3;
 	private bool isMoving;
-	private bool okMove;
+	public bool moveAllowed;
 	
 	
 	void Start(){
@@ -20,10 +20,9 @@ public class Player_Mov : MonoBehaviour {
 	}
 	
 	void playerMov(){
-		if (Input.GetMouseButtonDown (0)) {
-
+		if (moveAllowed) {
 			Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			RaycastHit2D hit = Physics2D.Raycast(ray, Vector2.up, 0.1f);
+			RaycastHit2D hit = Physics2D.Raycast(ray, Vector2.up, 0.0023f);
 
 			if (!isMoving) {
 				startPosition = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
@@ -36,6 +35,8 @@ public class Player_Mov : MonoBehaviour {
 				finalPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 				finalPosition = new Vector2(finalPosition.x, finalPosition.y + renderer.bounds.size.y / 2);
 			}
+
+			moveAllowed = false;
 			
 		} else if (isMoving) {
 			gameObject.transform.position = Vector2.MoveTowards (startPosition, finalPosition, Time.deltaTime * speed);

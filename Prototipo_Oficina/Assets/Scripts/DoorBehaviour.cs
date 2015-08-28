@@ -8,7 +8,7 @@ public class DoorBehaviour : MonoBehaviour {
 	public string Destination;
 	private bool canChangeScene = false;
 	private bool isWorking = false;
-	public bool DoorClick = false;
+	public bool DoorOpen = false;
 	private bool keepWalking = false;
 
 	void OnMouseOver(){
@@ -16,7 +16,7 @@ public class DoorBehaviour : MonoBehaviour {
 		isWorking = false;
 		if (Input.GetMouseButtonDown (0)) {
 			canChangeScene = true;
-			DoorClick = true;
+			DoorOpen = true;
 		}
 	}
 
@@ -25,7 +25,7 @@ public class DoorBehaviour : MonoBehaviour {
 			StartCoroutine (ChangeScene ());
 			col.GetComponent<Player_Mov>().enabled = false;
 			col.transform.position = Vector2.MoveTowards (col.transform.position, transform.position, Time.deltaTime * 3);
-			DoorClick = false;
+			DoorOpen = false;
 			keepWalking = true;
 		} else if(keepWalking){
 			col.GetComponent<Player_Mov>().enabled = false;

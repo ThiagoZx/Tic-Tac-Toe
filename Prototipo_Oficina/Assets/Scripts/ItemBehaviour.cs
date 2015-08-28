@@ -14,7 +14,7 @@ public class ItemBehaviour : MonoBehaviour {
 		}
 	}
 
-	void changePlace(GameObject item){
+	public void changePlace(GameObject item){
 		GameObject empty = GameObject.FindGameObjectWithTag ("EmptySlot");
 		item.transform.position = new Vector3 (empty.transform.position.x, empty.transform.position.y, item.transform.position.z);
 		item.transform.parent = empty.transform;
