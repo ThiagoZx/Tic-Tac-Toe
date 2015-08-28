@@ -4,13 +4,20 @@ using System.Collections;
 public class ItemBehaviour : MonoBehaviour {
 
 	public Texture2D cursor;
+	public GameObject Inventory;
 
 	void OnMouseOver(){
 		Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
 		if (Input.GetMouseButtonDown (0)) {
-			//Implementar ele virar filho de algum filho do inventario que tenha a tag "EmptySlot", e ter as mesmas posiçoes do mesmo. Isso fara ele ir ao inventario ok ok? Xou.
-			print("Ahooy");
+			//Lembrar de fazer isso modular ao interagir um objeto com outro. Pensei em usar um raycast para isso
+			changePlace(gameObject);
 		}
+	}
+
+	void changePlace(GameObject item){
+		GameObject empty = GameObject.FindGameObjectWithTag ("EmptySlot");
+		item.transform.position = new Vector3 (empty.transform.position.x, empty.transform.position.y, item.transform.position.z);
+		item.transform.parent = empty.transform;
 	}
 
 }
