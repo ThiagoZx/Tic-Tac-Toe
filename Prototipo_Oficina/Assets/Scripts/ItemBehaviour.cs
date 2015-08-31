@@ -17,6 +17,8 @@ public class ItemBehaviour : MonoBehaviour {
 		if (!atInv) {
 			toInv (gameObject);
 			atInv = true;
+			followMouse = false;
+			gameObject.collider2D.enabled = true;
 		} else {
 			followMouse = true;
 		}
@@ -34,6 +36,7 @@ public class ItemBehaviour : MonoBehaviour {
 		if (followMouse) {
 			gameObject.transform.position = new Vector2 (finalPosition.x, finalPosition.y);
 			gameObject.collider2D.enabled = false;
+			atInv = false;
 		}
 	}
 }
