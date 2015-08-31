@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+	private string itemHeld = null;
+
 	void Update(){
 		if (Input.GetMouseButtonDown (0)) {
 
@@ -14,6 +16,7 @@ public class GameController : MonoBehaviour {
 					
 				case "Item":
 					hit.transform.gameObject.GetComponent<ItemBehaviour>().itemCheck();
+					itemHeld = hit.transform.gameObject.GetComponent<ItemBehaviour>().itemName;
 					GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Mov>().moveAllowed = false;
 					break;
 

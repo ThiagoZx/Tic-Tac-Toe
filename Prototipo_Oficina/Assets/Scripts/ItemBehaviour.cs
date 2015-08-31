@@ -7,6 +7,7 @@ public class ItemBehaviour : MonoBehaviour {
 	public GameObject Inventory;
 	private bool atInv = false;
 	private bool followMouse = false;
+	public string itemName;
 
 	void OnMouseOver(){
 		Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
@@ -30,7 +31,9 @@ public class ItemBehaviour : MonoBehaviour {
 
 	public void Update(){
 		Vector2 finalPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		if (followMouse)
+		if (followMouse) {
 			gameObject.transform.position = new Vector2 (finalPosition.x, finalPosition.y);
+			gameObject.collider2D.enabled = false;
+		}
 	}
 }

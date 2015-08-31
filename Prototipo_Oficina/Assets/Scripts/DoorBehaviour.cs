@@ -9,7 +9,9 @@ public class DoorBehaviour : MonoBehaviour {
 	private bool canChangeScene = false;
 	private bool isWorking = false;
 	public bool DoorOpen = false;
+	public bool unlocked;
 	private bool keepWalking = false;
+
 
 	void OnMouseOver(){
 		Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
@@ -21,15 +23,17 @@ public class DoorBehaviour : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D col){
-		if (col.gameObject.tag == "Player" && canChangeScene) {
-			StartCoroutine (ChangeScene ());
-			col.GetComponent<Player_Mov>().enabled = false;
-			col.transform.position = Vector2.MoveTowards (col.transform.position, transform.position, Time.deltaTime * 3);
-			DoorOpen = false;
-			keepWalking = true;
-		} else if(keepWalking){
-			col.GetComponent<Player_Mov>().enabled = false;
-			col.transform.position = Vector2.MoveTowards (col.transform.position, transform.position, Time.deltaTime * 3);
+		if (unlocked) {
+			if (col.gameObject.tag == "Player" && canChangeScene) {
+				StartCoroutine (ChangeScene ());
+				col.GetComponent<Player_Mov>().enabled = false;
+				col.transform.position = Vector2.MoveTowards (col.transform.position, transform.position, Time.deltaTime * 3);
+				DoorOpen = false;
+				keepWalking = true;
+			} else if(keepWalking){
+				col.GetComponent<Player_Mov>().enabled = false;
+				col.transform.position = Vector2.MoveTowards (col.transform.position, transform.position, Time.deltaTime * 3);
+			}
 		}
 	}
 
