@@ -8,7 +8,7 @@ public class InteractionBehaviour : MonoBehaviour {
 	void OnMouseOver(){
 		Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
 		if (Input.GetMouseButtonUp (0)) {
-			print("Ahooy");
+			//print("Ahooy");
 		}
 	}
 
