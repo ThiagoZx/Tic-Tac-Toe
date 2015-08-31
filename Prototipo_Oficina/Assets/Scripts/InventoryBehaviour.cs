@@ -8,6 +8,7 @@ public class InventoryBehaviour : MonoBehaviour {
 	private float acceleration = 0.01f;
 	private bool above = false;
 	private bool inBound = false;
+	public bool onItem = false;
 
 	void OnMouseEnter(){
 		InventoryStatus = "Working";
@@ -25,7 +26,7 @@ public class InventoryBehaviour : MonoBehaviour {
 		if (inBound) {
 			InventoryStatus = "WaitToWork";
 			StartCoroutine (WaitToMove ());
-		} else {
+		} else if(!inBound){
 			InventoryStatus = "NotWorking";
 			StartCoroutine (MovementBACK ());
 		}
@@ -77,7 +78,7 @@ public class InventoryBehaviour : MonoBehaviour {
 
 	IEnumerator WaitToMove(){
 		yield return new WaitForSeconds (1f);
-		if (above) {
+		if (above || onItem) {
 			InventoryStatus = "Working";
 			StartCoroutine (MovementGO ());
 		} else {

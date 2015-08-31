@@ -13,6 +13,16 @@ public class ItemBehaviour : MonoBehaviour {
 		Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
 	}
 
+	void OnMouseEnter(){
+		if(atInv)
+			GameObject.FindGameObjectWithTag ("Inventory").GetComponent<InventoryBehaviour>().onItem = true;
+	}
+	
+	void OnMouseExit(){
+		if(atInv)
+			GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryBehaviour>().onItem = false;
+	}
+
 	public void itemCheck(){
 		if (!atInv) {
 			toInv (gameObject);
