@@ -20,6 +20,15 @@ public class DoorBehaviour : MonoBehaviour {
 		}
 	}
 
+	void Awake(){
+		string awake;
+		awake = PlayerPrefs.GetString (Application.loadedLevel + "unlock:");
+		if (awake == "_NothingnessTrue") {
+			Destroy(GameObject.FindGameObjectWithTag("Item"));
+			Destroy(GameObject.FindGameObjectWithTag("Lock"));
+		}
+	}
+
 	void OnTriggerStay2D(Collider2D col){
 		if (unlocked) {
 			if (col.gameObject.tag == "Player" && canChangeScene) {
@@ -41,13 +50,13 @@ public class DoorBehaviour : MonoBehaviour {
 		Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 		PlayerPrefs.SetFloat(Application.loadedLevelName + "x", gameObject.transform.position.x);
 		PlayerPrefs.SetFloat(Application.loadedLevelName + "y", gameObject.transform.position.y);
+		PlayerPrefs.SetString (Application.loadedLevel + "unlock:", Destination + "" + unlocked);
 		Application.LoadLevel(Destination);
 	}
 
 	void Update(){
-		if (Input.GetMouseButtonDown (0) && isWorking) {
+		if (Input.GetMouseButtonDown (0) && isWorking)
 			canChangeScene = false;
-		}	
 	}
 
 	void OnMouseExit(){
