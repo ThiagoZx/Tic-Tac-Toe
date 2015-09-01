@@ -23,7 +23,7 @@ public class DoorBehaviour : MonoBehaviour {
 	void Awake(){
 		string awake;
 		awake = PlayerPrefs.GetString (Application.loadedLevel + "unlock:");
-		if (awake == "_NothingnessTrue") {
+		if (awake == Destination + "True") {
 			Destroy(GameObject.FindGameObjectWithTag("Item"));
 			Destroy(GameObject.FindGameObjectWithTag("Lock"));
 		}
