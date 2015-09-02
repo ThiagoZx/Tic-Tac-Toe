@@ -28,8 +28,7 @@ public class GameController : MonoBehaviour {
 					break;
 
 				case "Floor":
-					
-					if(!hldnItem){
+					if(GameObject.FindGameObjectWithTag("Item").GetComponent<ItemBehaviour>().followMouse == false){
 						GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Mov>().moveAllowed = true;
 					} else {
 						GameObject.FindGameObjectWithTag("Item").GetComponent<ItemBehaviour>().itemCheck();

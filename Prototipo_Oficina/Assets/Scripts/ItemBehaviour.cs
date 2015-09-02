@@ -5,8 +5,8 @@ public class ItemBehaviour : MonoBehaviour {
 
 	public Texture2D cursor;
 	public GameObject Inventory;
-	private bool atInv = false;
-	private bool followMouse = false;
+	public bool atInv = false;
+	public bool followMouse = false;
 	public string itemName;
 
 	void OnMouseOver(){
@@ -19,8 +19,7 @@ public class ItemBehaviour : MonoBehaviour {
 	}
 	
 	void OnMouseExit(){
-		if(atInv)
-			GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryBehaviour>().onItem = false;
+		GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryBehaviour>().onItem = false;
 	}
 
 	public void itemCheck(){
@@ -47,6 +46,7 @@ public class ItemBehaviour : MonoBehaviour {
 			gameObject.transform.position = new Vector2 (finalPosition.x, finalPosition.y);
 			gameObject.collider2D.enabled = false;
 			atInv = false;
+			transform.parent = null;
 		}
 	}
 }
