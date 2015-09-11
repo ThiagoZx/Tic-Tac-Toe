@@ -15,7 +15,7 @@ public class InventoryBehaviour : MonoBehaviour {
 		velocity = 0.05f;
 		acceleration = 0.01f;
 		above = true;
-		if(GameObject.FindGameObjectWithTag ("Item").GetComponent<ItemBehaviour>().atInv == true)
+		if(GetComponentInChildren<ChildVerifier>().hasChild == true)
 			GameObject.FindGameObjectWithTag ("Item").collider2D.enabled = false;
 
 		StartCoroutine (MovementGO ());
@@ -25,8 +25,6 @@ public class InventoryBehaviour : MonoBehaviour {
 		velocity = 0.05f;
 		acceleration = 0.01f;
 		above = false;
-		if(GameObject.FindGameObjectWithTag ("Item").GetComponent<ItemBehaviour>().atInv == true)
-			GameObject.FindGameObjectWithTag ("Item").collider2D.enabled = true;
 
 		if (inBound) {
 			InventoryStatus = "WaitToWork";
@@ -45,7 +43,8 @@ public class InventoryBehaviour : MonoBehaviour {
 			} else {
 				transform.position = new Vector2 (transform.position.x, 4.4f);
 				inBound = true;
-				GameObject.FindGameObjectWithTag ("Item").collider2D.enabled = true;
+				if(GetComponentInChildren<ChildVerifier>().hasChild == true)
+					GameObject.FindGameObjectWithTag ("Item").collider2D.enabled = true;
 			}
 
 			if(transform.position.y >= 5.1f && transform.position.y <= 5.2f){
