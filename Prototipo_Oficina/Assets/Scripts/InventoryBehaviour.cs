@@ -15,7 +15,7 @@ public class InventoryBehaviour : MonoBehaviour {
 		velocity = 0.05f;
 		acceleration = 0.01f;
 		above = true;
-		if(GetComponentInChildren<ChildVerifier>().hasChild == true)
+		if(GameObject.FindGameObjectsWithTag("EmptySlot")[0].GetComponent<ChildVerifier>().hasChild == true)
 			GameObject.FindGameObjectWithTag ("Item").collider2D.enabled = false;
 
 		StartCoroutine (MovementGO ());
@@ -43,7 +43,7 @@ public class InventoryBehaviour : MonoBehaviour {
 			} else {
 				transform.position = new Vector2 (transform.position.x, 4.4f);
 				inBound = true;
-				if(GetComponentInChildren<ChildVerifier>().hasChild == true)
+				if(GameObject.FindGameObjectsWithTag("EmptySlot")[0].GetComponent<ChildVerifier>().hasChild == true)
 					GameObject.FindGameObjectWithTag ("Item").collider2D.enabled = true;
 			}
 

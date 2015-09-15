@@ -21,7 +21,6 @@ public class GameController : MonoBehaviour {
 						hit.transform.gameObject.GetComponent<ItemBehaviour>().itemCheck();
 						itemHeld = hit.transform.gameObject.GetComponent<ItemBehaviour>().itemName;
 						hldnItem = true;
-						GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Mov>().moveAllowed = false;
 					} else {
 						GameObject.FindGameObjectWithTag("Item").GetComponent<ItemBehaviour>().itemCheck();
 						carry = true;
@@ -30,7 +29,7 @@ public class GameController : MonoBehaviour {
 					break;
 
 				case "Floor":
-					if(GameObject.FindGameObjectWithTag("EmptySlot").GetComponent<ChildVerifier>().hasChild == true){
+					if(GameObject.FindGameObjectsWithTag("EmptySlot")[0].GetComponent<ChildVerifier>().hasChild == true){
 						if(GameObject.FindGameObjectWithTag("Item").GetComponent<ItemBehaviour>().followMouse == false){
 							GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Mov>().moveAllowed = true;
 						} else {

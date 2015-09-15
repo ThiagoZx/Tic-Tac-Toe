@@ -48,5 +48,7 @@ public class ItemBehaviour : MonoBehaviour {
 			atInv = false;
 			transform.parent = null;
 		}
+		/*print ("MOUSE: " + followMouse);
+		print ("INVENTARIO: " + atInv);*/
 	}
 }
